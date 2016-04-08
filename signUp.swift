@@ -11,16 +11,65 @@ import Foundation
 
 class signUp: UIViewController {
 
+    let APP_ID = "FAE21726-5A90-850A-FF05-A61BA47D6300"
+    let SECRET_KEY = "3F7C7705-741B-9140-FF08-F88A8F1B5E00"
+    let VERSION_NUM = "v1"
 
     @IBOutlet weak var userEmailAddressTextField: UITextField!
     @IBOutlet weak var userPasswordTextFeild: UITextField!
     @IBOutlet weak var userConfirmPasswordTextField: UITextField!
     
+  
+    
+   /*  var email: String? {
+        return String(userEmailAddressTextField!)
+    }
+    
+    var password: String? {
+        return String (userPasswordTextFeild!)
+    }
+    
+    var confirmPassword: String? {
+        return String (userConfirmPasswordTextField!)
+    }
+    */
+    var backendless = Backendless.sharedInstance()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        backendless.initApp(APP_ID, secret: SECRET_KEY, version: VERSION_NUM)
+        
+        registerUser()
+        
+        
+    }
+    func registerUser() {
+        
+        Types.tryblock({ () -> Void in
+            
+            let user = BackendlessUser()
+            user.email = "amochoa13@apu.edu"
+            user.password = "123"
+            
+            let registeredUser = self.backendless.userService.registering(user)
+            print("User has been registered (SYNC): \(registeredUser)")
+            },
+                       
+                       catchblock: { (exception) -> Void in
+                        print("Server reported an error: \(exception)" )
+        })
+        return
+    }
+
+    
     
     @IBAction func logInButtonTapped(sender: AnyObject) {
-     let email = userEmailAddressTextField.text
-     let password = userPasswordTextFeild.text
-     let confirmPassword = userConfirmPasswordTextField.text
+     
+        let email = userEmailAddressTextField.text
+        let password = userPasswordTextFeild.text
+        let confirmPassword = userConfirmPasswordTextField.text
+        
         
         
     if ((email ?? "").isEmpty || (password ?? "").isEmpty || (confirmPassword ?? "").isEmpty)
@@ -64,9 +113,13 @@ class signUp: UIViewController {
             
             return
         }
-
+        
         
         }
+    
+    
+    
+    
     }
 
 
