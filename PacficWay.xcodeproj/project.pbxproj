@@ -29,6 +29,8 @@
 		39C115D11CAD05E200D53306 /* MediaLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C115B71CAD05E200D53306 /* MediaLibiOS.a */; };
 		39C115D21CAD05E200D53306 /* libspeex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C115C21CAD05E200D53306 /* libspeex.a */; };
 		39C115D31CAD05E200D53306 /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C115C81CAD05E200D53306 /* libx264.a */; };
+		39DB34D11CCDB9C800DA7F53 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DB34D01CCDB9C800DA7F53 /* login.swift */; };
+		39DB67201CD6D79F00E390DE /* profilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DB671F1CD6D79F00E390DE /* profilePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +249,8 @@
 		39C115C51CAD05E200D53306 /* x264.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x264.h; sourceTree = "<group>"; };
 		39C115C61CAD05E200D53306 /* x264_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x264_config.h; sourceTree = "<group>"; };
 		39C115C81CAD05E200D53306 /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libx264.a; sourceTree = "<group>"; };
+		39DB34D01CCDB9C800DA7F53 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = login.swift; path = ../login.swift; sourceTree = "<group>"; };
+		39DB671F1CD6D79F00E390DE /* profilePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profilePage.swift; path = ../profilePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,8 +328,10 @@
 			isa = PBXGroup;
 			children = (
 				39A6C30D1C75779400CD228C /* AppDelegate.swift */,
+				39DB671F1CD6D79F00E390DE /* profilePage.swift */,
 				39A6C30F1C75779400CD228C /* pacificWay.swift */,
 				39C114181CACB90900D53306 /* signUp.swift */,
+				39DB34D01CCDB9C800DA7F53 /* login.swift */,
 				3929034B1CA3683B00630CB8 /* Main */,
 				39A6C3141C75779400CD228C /* Assets.xcassets */,
 				39A6C3161C75779400CD228C /* LaunchScreen.storyboard */,
@@ -784,6 +790,7 @@
 				TargetAttributes = {
 					39A6C3091C75779400CD228C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Y257CLZ8R5;
 					};
 					39A6C31D1C75779500CD228C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -849,7 +856,9 @@
 			files = (
 				39A6C3101C75779400CD228C /* pacificWay.swift in Sources */,
 				39A6C30E1C75779400CD228C /* AppDelegate.swift in Sources */,
+				39DB67201CD6D79F00E390DE /* profilePage.swift in Sources */,
 				39C114191CACB90900D53306 /* signUp.swift in Sources */,
+				39DB34D11CCDB9C800DA7F53 /* login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +998,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PacficWay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -997,6 +1008,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = APU.PacficWay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/lib/backendless/include/Backendless-With-Media-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(PROJECT_DIR)/lib/backendless/include/Backendless-With-Media-Bridging-Header.h";
 			};
@@ -1006,6 +1018,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PacficWay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1014,6 +1028,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = APU.PacficWay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/lib/backendless/include/Backendless-With-Media-Bridging-Header.h";
 			};
 			name = Release;
